@@ -2,7 +2,6 @@ const db= require("../db/db.json");
 const fs = require("fs");
 const uuid = require("uuid")
 
-//noteId =[];
 
 module.exports = function(app) {
    
@@ -17,7 +16,7 @@ module.exports = function(app) {
             title: req.body.title,
             text: req.body.text
         };
-        
+
         fs.readFile("./db/db.json","utf8",(err,data)=> {
         if (err) throw err
         
