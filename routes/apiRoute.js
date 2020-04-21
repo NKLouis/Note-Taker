@@ -11,7 +11,7 @@ module.exports = function(app) {
 
     app.post("/api/notes", function(req, res) {
     
-         let noteId = uuid.v4()
+         //let noteId = uuid.v4()
          let newNote = req.body;
          console.log(newNote);
          res.json(newNote);
@@ -26,8 +26,8 @@ module.exports = function(app) {
         fs.readFile("./db/db.json","utf8",(err,data)=> {
         if (err) throw err
         
-        const allNotes = JSON.parse(data);
-        allNotes.push(newNote);
+        //const allNotes = JSON.parse(data);
+        //allNotes.push(newNote);
 
         fs.writeFile("./db/db.json",JSON.stringify(allNotes),err => {
             if (err) throw err
@@ -63,4 +63,4 @@ module.exports = function(app) {
 
 };  
 
-//
+//dbjson.lenght +1
