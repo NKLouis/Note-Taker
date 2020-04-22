@@ -5,9 +5,13 @@ const uuid = require("uuid")
 
 module.exports = function(app) {
 
-    app.get("/api/notes", function(req, res) {
-      res.send(db);
-    });
+    app.get("/api/notes", function (req, res) {
+        fs.readFile("./db/db.json", "utf8", (err, data) => {
+          console.log(data);
+          if (err) throw err;
+          res.json(JSON.parse(data));
+        });
+      });
 
     app.post("/api/notes", function(req, res) {
         let noteId = uuid.v4()
@@ -28,8 +32,6 @@ module.exports = function(app) {
             res.json(db)
             console.log("success!!")
 
-
-
         })
 
         })
@@ -45,7 +47,7 @@ module.exports = function(app) {
 
             fs.writeFile("./db/db.json",JSON.stringify(updateNote),err => {
                 if (err) throw err
-                res.json(db)
+                res.json(updateNote)
                 console.log("Deleted!!")
         });
 
