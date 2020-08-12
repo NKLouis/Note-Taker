@@ -3,9 +3,9 @@
 ## Deployed Link 
 https://sleepy-hamlet-60722.herokuapp.com/?
 
-## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## Description
+An application that can be used to write, save, and delete notes. This application uses an express backend and save and retrieve note data from a JSON file.
 
 ![](http://g.recordit.co/fvSLUICdX5.gif)
 
